@@ -20,7 +20,10 @@ class ShowcaseCarousel extends HTMLElement {
     shadow.innerHTML = `<style>${style}</style>`;
     shadow.innerHTML += template;
 
-    shadow.append(...this.children);
+    const reel = document.createElement("div");
+    reel.setAttribute("id", "reel");
+    reel.append(...this.children);
+    shadow.append(reel);
   }
 
   disconnectedCallback() {
